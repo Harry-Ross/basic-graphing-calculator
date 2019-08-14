@@ -17,6 +17,17 @@ int main() {
 	}
 	if (file.is_open()) {
 		bmpFunctions.writeBMPHeader(file);
+		for (int x = 0; x < 1024; x++) {
+			for (int y = 0; y < 1024; y++) {
+				if (x == y) {
+					bmpFunctions.writePixel(file, { 255, 255, 255 });
+				}
+				else {
+					bmpFunctions.writePixel(file, { 0, 0, 0 });
+				}
+				
+			}
+		}
 	}
 	file.close();
 	
